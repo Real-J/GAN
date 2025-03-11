@@ -34,23 +34,6 @@ UNIT-GAN employs multiple loss functions to achieve high-quality translation:
 - **Latent Consistency Loss (\( \mathcal{L}_{latent} \))**: Ensures that the latent representations of an image remain consistent across domains.
 - **Reconstruction Loss (\( \mathcal{L}_{recon} \))**: Ensures that encoding and decoding within the same domain reconstructs the original image.
 
-## Model Architecture
-Below is a simplified representation of the UNIT-GAN architecture:
-
-```
-Domain X  --->  Encoder_X  --->  Shared Latent Space (Z)  --->  Decoder_X  --->  Reconstructed X
-Domain Y  --->  Encoder_Y  --->  Shared Latent Space (Z)  --->  Decoder_Y  --->  Reconstructed Y
-
-Domain X  --->  Encoder_X  --->  Shared Latent Space (Z)  --->  Decoder_Y  --->  Fake Domain Y
-Domain Y  --->  Encoder_Y  --->  Shared Latent Space (Z)  --->  Decoder_X  --->  Fake Domain X
-
-```
-
-- \( G_X: X \to Y \) and \( G_Y: Y \to X \) are the generators.
-- \( D_X \) and \( D_Y \) are the discriminators.
-- The **encoders** learn to extract domain-invariant features.
-- The **decoders** generate realistic images from the latent space.
-
 ## Training Details
 ### 1. Data Requirements
 UNIT-GAN does not require **paired** datasets like pix2pix. Instead, it uses **unpaired** datasets from two different domains.
