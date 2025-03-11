@@ -38,8 +38,12 @@ UNIT-GAN employs multiple loss functions to achieve high-quality translation:
 Below is a simplified representation of the UNIT-GAN architecture:
 
 ```
+Domain X  --->  Encoder_X  --->  Shared Latent Space (Z)  --->  Decoder_X  --->  Reconstructed X
+Domain Y  --->  Encoder_Y  --->  Shared Latent Space (Z)  --->  Decoder_Y  --->  Reconstructed Y
+
 Domain X  --->  Encoder_X  --->  Shared Latent Space (Z)  --->  Decoder_Y  --->  Fake Domain Y
 Domain Y  --->  Encoder_Y  --->  Shared Latent Space (Z)  --->  Decoder_X  --->  Fake Domain X
+
 ```
 
 - \( G_X: X \to Y \) and \( G_Y: Y \to X \) are the generators.
