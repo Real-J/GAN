@@ -57,3 +57,6 @@ UNIT-GAN has several real-world applications, including:
 - **Face Synthesis**: Transforming faces between different domains (e.g., age progression).
 - **Autonomous Driving**: Simulating different weather conditions for training perception models.
 
+#### Preview:
+![preview](example.png)
+
